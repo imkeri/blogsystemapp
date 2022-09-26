@@ -50,7 +50,9 @@ const Home = () => {
               {
                data.map((val)=>{
                     return <>
-                    <Blogs Auth_name={val.Auth_name} 
+                    <Blogs
+                         id={val._id}
+                         Auth_name={val.Auth_name} 
                          category={val.category}
                          title={val.title}
                          description={val.description}

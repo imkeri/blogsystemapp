@@ -1,6 +1,7 @@
 import React from 'react'
 import './blog.css'
 import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
+import { Link } from 'react-router-dom';
 const Blogs = (props) => {
   return (
     
@@ -13,6 +14,7 @@ const Blogs = (props) => {
             </div>
             <div className='middle_line-1'>
             <h3>{props.title}</h3>
+            <Link to={`detail/${props.id}`}>{props.title}</Link>
             <h4>{props.description}</h4>
             </div>
             <div className='last_line-1'>

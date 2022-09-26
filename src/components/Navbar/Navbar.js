@@ -28,7 +28,7 @@ const Navbar = () => {
         <ul className='navbar'>
           <li><NavLink to="/">Our story</NavLink></li>
           <li><NavLink to="/">MemberShip</NavLink></li>
-          <li><NavLink to="/">write</NavLink></li>
+          <li><NavLink to="/write">write</NavLink></li>
           <li><NavLink to="/signin">sign in</NavLink></li>
           <li className='logout' onClick={(e) => logout(e)}>Sign Out</li>
           <button className='btn1'><Link to="/ragistration">Get started</Link></button>
