@@ -19,11 +19,11 @@
     right: 0;
   }
 
-.box3{
-    width: 30%;
+.box{
+    width: 24%;
     position: absolute;
     top: 20%;
-    left: 35%;
+    left: 38%;
     padding: 40px;
     border-radius: 10px;
     color:rgb(10, 9, 9);
@@ -32,14 +32,14 @@
     padding: 2%;
     background-color: rgb(218, 165, 8);
 }
-.box3 h3{
+.box h3{
     color: rgb(3, 2, 2);
     font-family: "Raleway", sans-serif;
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 600;
 }
-.box3 input{
+.box input{
     border: none;
     border-bottom: 1px solid black;
     color: black;
@@ -48,40 +48,24 @@
 ::placeholder{
     color: black;
 }
-.ragistration_btn{
+.Login_btn{
     background-color: black;
     color: white;
-    padding: 5px 20px;
+    padding: 5px 30px;
     border-radius: 20px;
+    margin: 5px 0px;
+}
+.checkbox p{
+    color: black;
+    font-weight: 900;
+    margin-top: 5px;
+}
+.box a{
     margin-top: 10px;
-}
-.checkbox{
-  margin-top: 10px;
-  display: flex;
-}
-form input{
-  width: 100%;
-  margin: 10px 0;
-  padding: 5px;
-  border: none;
-  background: transparent;
-  border-bottom: 1px solid #fff;
-}
-::placeholder{
-  color: #fff;
-}
-input{
-color: #fff;
-}
-@media (min-width: 1024px) {
-    #main_box {
-      background-attachment: fixed;
-    }
-  } 
-@media screen and (max-width:1124px) {
+    color: black;
+    font-weight: 900;
     
-.box3{
-    width: 40%;
-    left: 30%;
 }
+.box a:hover{
+    color: black;
 }

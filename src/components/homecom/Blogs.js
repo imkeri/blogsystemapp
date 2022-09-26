@@ -1,7 +1,7 @@
 import React from 'react'
 import './blog.css'
 import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
-const Blogs = () => {
+const Blogs = (props) => {
   return (
     
       <div className='row'>
@@ -9,15 +9,15 @@ const Blogs = () => {
         <div className='tranding_new'>
             <div className='first_line-1'>
               <img src='image/1.jpg' alt='p1'></img>
-              <p>Tom Cooper</p>
+              <p>{props.Auth_name}</p>
             </div>
             <div className='middle_line-1'>
-            <h3>The best collection of neatly designed  blog</h3>
-            <h4>of neatly designed and carefully develope</h4>
+            <h3>{props.title}</h3>
+            <h4>{props.description}</h4>
             </div>
             <div className='last_line-1'>
               <p>Sep 21.2017 2 min read .</p> 
-              <p className='blog_dis'>Desing</p>
+              <p className='blog_dis'>{props.category}</p>
               
             </div>
        </div>
