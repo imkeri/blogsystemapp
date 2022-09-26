@@ -1,0 +1,30 @@
+.q-1{
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 6px;
+}
+.topic{
+  display: flex;
+  flex-direction: column;
+  padding:14px 0px;
+  border-bottom: 1px solid rgb(229, 224, 224);
+}
+.topic div{
+    margin: 10px;
+}
+.topic span{
+    border: 1px solid rgb(229, 224, 224);
+    padding: 6px 12px;
+    color: gray;
+}
+.sidelist ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    padding-left: 5px;
+}
+.sidelist ul li{
+    padding:6px 24px 6px 0px;
+    color: gray;
+    font-weight: 500;
+}

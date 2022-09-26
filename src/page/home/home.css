@@ -1,0 +1,32 @@
+.tranding_media{
+    margin-bottom: 10px;
+}
+.tranding_icon{
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid black;    
+}
+.tranding_text{
+   font-weight: 800;
+   font-size: 13px;
+   font-family: 'Roboto Slab', serif;
+  
+}
+.f1{
+    display: flex;
+}
+.b1{
+    width: 60%;
+
+}
+.b2{
+    position: sticky;
+    margin-top: 0;
+    top: 15%;
+    left: 20px;
+    width: 40%;
+    height: 200px;
+    margin: 5px;
+    padding-left: 30px;
+}

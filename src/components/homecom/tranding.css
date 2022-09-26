@@ -1,0 +1,36 @@
+.tranding{
+    display: flex;
+}
+.count h1{
+    color: rgb(159, 157, 157);
+    font-size: 30px;
+    padding-right:18px;
+    padding-top: 0;
+    margin-top: 0;
+}
+.tranding_new{
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+}
+.first_line{
+    display: flex;
+    font-size: 13px;
+    font-weight: 700;
+    padding-top: 6px;
+    
+}
+.first_line img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.middle_line h3{
+    font-size:18px;
+    font-weight: 700;
+}
+.last_line span{
+    font-size: 14px;
+    color: gray;
+}
