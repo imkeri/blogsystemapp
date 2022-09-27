@@ -30,6 +30,10 @@
    word-wrap: break-word;
    font-size: 18px;
 }
+.middle_line-1 a{
+   color: black;
+   text-decoration: none;
+}
 .blog_img img{
    width: 190px;
    height: 140px;
