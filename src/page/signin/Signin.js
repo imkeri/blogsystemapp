@@ -3,7 +3,12 @@ import './signin.css'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { baseurl } from '../../baseurl'
+import Cookies from 'js-cookie'
+
 const Signin = () => {
+
+   
+    
     const [data, setData] =useState([{
         email: "",
         password: ""
@@ -16,15 +21,16 @@ const Signin = () => {
         await axios.post(`${baseurl}/user/login`,data)
         .then((res)=>{
             console.log("....",res.data);
-            const token = localStorage.getItem('token')
-            console.log("tokennnnn",token)
-            if(token =="undefined" || token===null)
-            {
-                console.log("hello")
-                localStorage.setItem("token",res.data.token)
+            const token = Cookies.get('jwt')
+            console.log("token...",token)
+
+            if(token==='' || token === undefined){
+                Cookies.set('email', res.data.email)
+                Cookies.set('jwt', res.data.token)
             }
             
             window.location="/"
+           
         })
        } catch (error) {
         console.log("error..",error)

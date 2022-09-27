@@ -33,7 +33,8 @@
     font-family: 'Roboto Slab', serif;
     margin-bottom: 30px;
 }
-.btn_text{
+.btn_text a,.btn_text a:hover{
+    text-decoration: none;
     width: 34%;
     padding: 10px 30px;
     background-color: black;
@@ -46,6 +47,7 @@
    font-family: 'Roboto Slab', serif;
 
 }
+
 .animation{
     width: 100%;
    

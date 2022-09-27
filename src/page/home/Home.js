@@ -56,6 +56,7 @@ const Home = () => {
                          category={val.category}
                          title={val.title}
                          description={val.description}
+                         
 
                     />
                     </>

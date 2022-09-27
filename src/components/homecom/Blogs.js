@@ -2,7 +2,24 @@ import React from 'react'
 import './blog.css'
 import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { baseurl } from '../../baseurl';
+import Cookies from 'js-cookie';
 const Blogs = (props) => {
+  const email = Cookies.get('email')
+  const Bookmark =(id)=>{
+    console.log(id)
+
+    try {
+      axios.put(`${baseurl}/blog/addbookmark/${email}/${id}`)
+    .then((res)=>{
+      console.log("res....",res.data)
+    })
+    } catch (error) {
+      console.log("error",error)
+    }
+
+  }
   return (
     
       <div className='row'>
@@ -13,20 +30,18 @@ const Blogs = (props) => {
               <p>{props.Auth_name}</p>
             </div>
             <div className='middle_line-1'>
-            <h3>{props.title}</h3>
-            <Link to={`detail/${props.id}`}>{props.title}</Link>
+            <h3><Link to={`detail/${props.id}`}>{props.title}</Link></h3>
             <h4>{props.description}</h4>
             </div>
             <div className='last_line-1'>
               <p>Sep 21.2017 2 min read .</p> 
               <p className='blog_dis'>{props.category}</p>
-              
             </div>
        </div>
         </div>
         <div className='col-md-5 blog_img d-flex'>
         <p className='blog_save_icon'>
-        <TurnedInNotIcon className='icon'/></p>
+        <TurnedInNotIcon className='icon' onClick={()=>Bookmark(props.id)}/></p>
             <img src='image/2.jpg' alt='p2'></img>
         </div>
       </div>

@@ -1,0 +1,44 @@
+.body{
+    display: flex;
+}
+.sidebar{
+    position: sticky;
+    top: 80px;
+    flex: 1;
+    height: 90vh;
+    border-right: 1px solid black;
+}
+.user_part{
+    flex: 16;
+}
+.sidebar .logo_icon{
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 26px;
+}
+.all_icon{
+    height: 40vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 70px;
+    flex-direction: column;
+}
+.all_icon .aicon{
+    font-size: 30px;
+    color: grey;
+}
+.user_icon{
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 24px;
+}
+.user_icon a,.user_icon:hover{
+  color: black;
+}
+.user_icon .uicon,.logo_icon .licon{
+    font-size: 40px;
+}

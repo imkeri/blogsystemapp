@@ -2,10 +2,13 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { useParams ,Link} from 'react-router-dom'
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import { baseurl } from '../../baseurl'
 import './blogbyid.css'
 const Blogbyid = () => {
-    const [data,setData] = useState([])
+    const [data,setData] = useState([]);
+    const [like,setLike] = useState(1);
+    const [like_num,setLike_num] = useState([data.like])
     const params = useParams()
     const id = params.id
 console.log(id)
@@ -15,7 +18,6 @@ console.log(id)
         .then((res)=>{
             console.log("........",res.data.data)
             setData(res.data.data)
-
         })
        } catch (error) {
          console.log("error",error)
@@ -24,6 +26,26 @@ console.log(id)
      useEffect(()=>{
         getbyid()
      },[])
+
+    //  end viewbyid
+
+    const likeblog=(e)=>{
+      console.log("hello",like)
+      try {
+       console.log("hello")
+        axios.put(`${baseurl}/blog/addlikedislike/${id}`,like)
+        .then((res)=>{
+          console.log("res....",res)
+          setLike_num(res.data.data)
+          console.log(like_num.like)
+        }).catch((err)=>{
+          console.log("error...",err)
+        })
+      } catch (error) {
+        console.log("error",error)
+      }
+    
+    }
 
   return (
     <div className='blog_detail container-fluid'>
@@ -43,10 +65,11 @@ console.log(id)
            <p>{data.description}</p>
 
            <img src="/image/3.jpg" className='blog_img'></img>
-
-           <p className='details'>All this hardware hacking has taught me quite a bit about the state of repair-age in laptops today. I’ve learned that some machines are easier to repair than others, because they were designed to be opened up and to have components swapped in and out. Gaming laptops like my son’s? Usually quite repairable: They’re roomier inside and the parts are pretty modular, because it’s assumed that gamers might want to upgrade components. But many other devices I’ve owned were designed for skinniness — like Mac laptops in recent years, or Ipads and many phones. Those things are nightmares, and occasionally flat-out impossible to repair: Components aren’t modular, or are glued in place (to make things sleeker, but thereby also making them unremovable). Kyle Wiens and the folks at iFixit have been doing superb rankings of the fixability of devices for years now.</p>
+            <p className='details'>All this hardware hacking has taught me quite a bit about the state of repair-age in laptops today. I’ve learned that some machines are easier to repair than others, because they were designed to be opened up and to have components swapped in and out. Gaming laptops like my son’s? Usually quite repairable: They’re roomier inside and the parts are pretty modular, because it’s assumed that gamers might want to upgrade components. But many other devices I’ve owned were designed for skinniness — like Mac laptops in recent years, or Ipads and many phones. Those things are nightmares, and occasionally flat-out impossible to repair: Components aren’t modular, or are glued in place (to make things sleeker, but thereby also making them unremovable). Kyle Wiens and the folks at iFixit have been doing superb rankings of the fixability of devices for years now.</p>
            </div> 
-
+            <div className='like d-flex'>
+              <FavoriteIcon onClick={(e)=>likeblog(e)}/><span>{like_num.like}</span>
+            </div>
         </div>
         <div className='col-md-4 pt-5 side_atho'>
              <div>
@@ -58,10 +81,8 @@ console.log(id)
              </div>
               <div className='d-flex auth_detail'>
               <img src='/image/2.jpg' alt='p1'></img>
-              <h3>keri</h3>
+              <h5>{data.Auth_name}</h5>
               </div>
-
-              
              </div>
         </div>
         

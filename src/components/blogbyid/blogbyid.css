@@ -81,6 +81,19 @@
 .auth_detail img{
 
     width: 20%;
-    height: 100px;
+    height: 90px;
     border-radius: 50%;
+}
+.auth_detail h5{
+    padding: 5px;
+}
+.like{
+    position: sticky;
+    width: 8%;
+    background-color: white;
+    box-shadow: 2px 3px 4px rgb(121, 121, 121);
+    bottom:10px;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 30px;
 }

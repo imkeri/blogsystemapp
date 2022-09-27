@@ -1,0 +1,35 @@
+.userprofile{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userprofile .profile_detail{
+    width: 50%;
+    margin-top: 5%;
+}
+
+.name_input{
+    width: 70%;
+    float: left;
+}
+.name_input label{
+    color: black;
+    font-size: 20px;
+}
+.name_input input{
+    border-bottom: 1px solid black;
+    color: black;
+}
+.name_input p{
+    font-size: 12px;
+}
+form .editbtn{
+    float: right;
+    color: gray;
+    border:  1px solid rgb(166, 165, 165);
+    border-radius: 20px;
+    background-color: transparent;
+    padding: 8px 14px;
+
+}

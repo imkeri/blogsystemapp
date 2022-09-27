@@ -5,14 +5,25 @@ import React from 'react'
 import FiberSmartRecordIcon from '@mui/icons-material/FiberSmartRecord';
 import axios from 'axios';
 import { baseurl } from '../../baseurl';
+import Cookies from 'js-cookie'
+
 const Navbar = () => {
+
+
+  const token = Cookies.get('jwt')
+  console.log("tpoken..", token)
 
   const logout = (e) => {
     try {
-      console.log("hello")
-      axios.get(`${baseurl}/user/logout`)
+
+      axios.post(`${baseurl}/user/logout/${token}`,)
         .then((res) => {
-          console.log(res)
+          console.log("res.....",res)
+          Cookies.remove('jwt')
+          Cookies.remove('email')
+          window.location= "/signin"
+        }).catch((er)=>{
+          console.log("error",er)
         })
     } catch (error) {
       console.log("error.....", error)
@@ -29,8 +40,12 @@ const Navbar = () => {
           <li><NavLink to="/">Our story</NavLink></li>
           <li><NavLink to="/">MemberShip</NavLink></li>
           <li><NavLink to="/write">write</NavLink></li>
-          <li><NavLink to="/signin">sign in</NavLink></li>
-          <li className='logout' onClick={(e) => logout(e)}>Sign Out</li>
+          {
+            token ? <li><NavLink to=" "onClick={(e) => logout(e)}>sign out</NavLink></li>:
+              <li><NavLink to="/signin">sign in</NavLink></li>
+          }
+
+
           <button className='btn1'><Link to="/ragistration">Get started</Link></button>
 
         </ul>

@@ -26,9 +26,6 @@ const Write = () => {
         setData({ ...data, [name]: value })
 
     }
-
-  
-
   return (
     <div className='write'>
      <div className='write_blog'>
@@ -37,7 +34,7 @@ const Write = () => {
      <input type="text" placeholder="cetegory" name='category' onChange={(e)=>handle(e)} value={data.category}></input><br></br>
       <input type="text" placeholder="Title.." name="title" onChange={(e)=>handle(e)} value={data.title}></input><br></br>
       <textarea type="text" placeholder="Discription.." name="description" onChange={(e)=>handle(e)} value={data.description}></textarea>
-      <button >Post</button>
+      <button className='post'>Post</button>
      </form>
      </div>
     </div>
