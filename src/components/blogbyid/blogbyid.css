@@ -37,14 +37,50 @@
 
 }
 .side_atho{
+    
     border-left: 1px solid black;
 }
 .auth_btn{
     background-color: black;
-    border-radius: 30px;
-    padding: 10px 30px;
+    border-radius: 40px;
+    padding: 10px 20%;
+    margin: 5px 20px;
 }
 .auth_btn a{
     text-decoration: none;
     color: white;
+}
+.Signin{
+    color: rgb(15, 174, 15);
+    font-size: 16px;
+    font-weight: 500;
+}
+.inputfield{
+    margin-top: 5%;
+    margin-left: 4%;
+    width: 80%;
+    border: 1px solid rgb(190, 188, 188);
+    border-radius: 30px;
+    padding: 5px;
+}
+.inputfield .icon{
+  margin: 5px;
+}
+.inputfield input{
+    width: 80%;
+    border: none;
+    padding: 5px 10px;
+}
+::placeholder{
+    color: gray;
+}
+.auth_detail{
+    padding: 5% 3%;
+    flex-direction: column;
+}
+.auth_detail img{
+
+    width: 20%;
+    height: 100px;
+    border-radius: 50%;
 }

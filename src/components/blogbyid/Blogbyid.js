@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { useParams ,Link} from 'react-router-dom'
 import { baseurl } from '../../baseurl'
 import './blogbyid.css'
@@ -50,8 +51,17 @@ console.log(id)
         <div className='col-md-4 pt-5 side_atho'>
              <div>
              <button className='auth_btn'><Link to="/ragistration">Get started</Link></button>
-             <snap className='logout'>Sign Out</snap>
-             
+             <snap className='Signin'>Sign In</snap>
+             <div className='d-flex inputfield'>
+                <snap><SearchOutlinedIcon className='icon'/></snap>
+                <input type="text" placeholder='search'></input>
+             </div>
+              <div className='d-flex auth_detail'>
+              <img src='/image/2.jpg' alt='p1'></img>
+              <h3>keri</h3>
+              </div>
+
+              
              </div>
         </div>
         
