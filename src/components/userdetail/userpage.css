@@ -6,6 +6,7 @@
     top: 80px;
     flex: 1;
     height: 90vh;
+    z-index: 6;
     border-right: 1px solid black;
 }
 .user_part{

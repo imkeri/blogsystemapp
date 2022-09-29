@@ -15,6 +15,7 @@ const Write = () => {
         await axios.post(`${baseurl}/blog/insertBlog`, data)
             .then(res => {
                 console.log(res)
+                window.location="/"
 
             }).catch((error) => {
                 alert(error.response.data.message)

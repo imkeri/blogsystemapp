@@ -4,11 +4,17 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    height: auto;
+    min-height: 90vh;
+    background-color:rgba(244, 245, 246, 0.863);
 }
 .write_blog{
     margin-top: 3%;
     width: 50%;
+    background: white;
+    box-shadow: 2px 5px 5px rgb(215, 215, 215),-1px 0 .6em rgb(223, 222, 222);
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 .write_blog input{
     width: 100%;
@@ -21,7 +27,7 @@
 }
 textarea{
     width: 100%;
-    height: 400px;
+    height: 200px;
     /* border:none */
 }
 .post{

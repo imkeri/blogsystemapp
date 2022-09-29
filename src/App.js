@@ -8,6 +8,7 @@ import Blogbyid from "./components/blogbyid/Blogbyid";
 import UserPage from "./components/userdetail/UserPage";
 import Profile from "./components/userdetail/Profile";
 import BlogHome from "./page/BlogsHome/BlogHome";
+import MainAuth from "./components/blogByAuthname/MainAuth";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/detail/:id" element={<Blogbyid />}></Route>
           <Route path="/user" element={<UserPage />}></Route>
           <Route path="/userprofile" element={<Profile/>}></Route>
+          <Route path="/authdetail/:name" element={<MainAuth />}></Route>
           <Route path="/home" element={<BlogHome/>}></Route>
           </Route>
          <Route path="/ragistration" element={<Ragistration/>}></Route>

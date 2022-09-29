@@ -16,6 +16,7 @@ const Ragistration = () => {
         await axios.post(`${baseurl}/user/userregister`, data)
             .then(res => {
                 console.log(res)
+                window.location="/signin"
 
             }).catch((error) => {
                 alert(error.response.data.message)

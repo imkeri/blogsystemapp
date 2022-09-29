@@ -10,6 +10,7 @@ import { baseurl } from '../../baseurl';
 const Home = () => {
 
      const [data,setDate] = useState([]);
+     const [tranding, setTranding] = useState([]);
      // view all blog
 
        const getallblog = () =>{
@@ -24,7 +25,20 @@ const Home = () => {
           }
        }
 
+       const getFiveBlog = () => {
+          try {
+               axios.get(`${baseurl}/blog/topfive`)
+                    .then((res) => {
+                         console.log("res.....", res.data.data);
+                         setTranding(res.data.data);
+                    })
+          } catch (error) {
+               console.log("errrrr",error);
+
+          }
+     }
        useEffect(()=>{
+          getFiveBlog();
           getallblog();
        },[])
 
@@ -36,21 +50,30 @@ const Home = () => {
          <span><ShowChartIcon className='tranding_icon'/> </span> <span className='tranding_text'> Tranding on Medium</span>
          </div>
          <div className='row'>
-          <Tranding/>
-          <Tranding/>
-          <Tranding/>
-          <Tranding/>
-          <Tranding/>
-          <Tranding/>
+         {
+                              tranding.map((val)=>{
+                                   return (
+                                        <>
+                                             <Tranding
+                                                  id={val._id}
+                                                  Auth_name={val.Auth_name}
+                                                  title={val.title}
+                                                  createdAt={val.createdAt}
+                                             ></Tranding>
+                                        </>
+                                   )
+                              })
+                         }
          </div>
       </div>
       <hr></hr>
       <div className='container pt-5 f1'>
            <div className='b1'>
               {
-               data.map((val)=>{
+               data.map((val,key)=>{
                     return <>
                     <Blogs
+                         key={key}
                          id={val._id}
                          Auth_name={val.Auth_name} 
                          category={val.category}

@@ -87,9 +87,14 @@
 .auth_detail h5{
     padding: 5px;
 }
+.auth_detail a,a.auth_detail a:hover{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
 .like{
     position: sticky;
-    width: 8%;
+    /* width: 7%; */
     background-color: white;
     box-shadow: 2px 3px 4px rgb(121, 121, 121);
     bottom:10px;

@@ -34,7 +34,7 @@ const Navbar = () => {
     <div className='nav'>
       <nav id="header" className="navbar">
         <div className='logo'>
-          <FiberSmartRecordIcon className='logo_icon' /><spna ><Link to="/" className="logo_text">Medium</Link></spna>
+          <FiberSmartRecordIcon className='logo_icon' /><span ><Link to="/" className="logo_text">Medium</Link></span>
         </div>
         <ul className='navbar'>
           <li><NavLink to="/">Our story</NavLink></li>

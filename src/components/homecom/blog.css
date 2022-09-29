@@ -27,6 +27,8 @@
 }
 .middle_line-1 h4{
    color: gray;
+   max-height: 42px;
+   overflow: hidden;
    word-wrap: break-word;
    font-size: 18px;
 }
@@ -56,5 +58,5 @@
 }
 .blog_save_icon .icon{
    font-size: 30px;
-   color: gray;
+   color:black;
 }
