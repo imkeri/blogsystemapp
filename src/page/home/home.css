@@ -30,3 +30,17 @@
     margin: 5px;
     padding-left: 30px;
 }
+
+
+
+@media screen and (max-width:1200px) {
+    .f1{
+        flex-direction: column;
+    }
+    .b1{
+        width: 100%;
+    }
+    .b2{
+        width: 100%;
+    }
+}

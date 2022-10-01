@@ -13,14 +13,18 @@ const Ragistration = () => {
 
     const ragistration = async (e) => {
         e.preventDefault();
+       try {
         await axios.post(`${baseurl}/user/userregister`, data)
-            .then(res => {
-                console.log(res)
-                window.location="/signin"
+        .then(res => {
+            console.log(res)
+            window.location="/signin"
 
-            }).catch((error) => {
-                alert(error.response.data.message)
-            })
+        }).catch((error) => {
+            alert(error)
+        })
+       } catch (error) {
+        console.log("error",error)
+       }
     }
 
     const handle = (e) => {

@@ -15,7 +15,7 @@ const header = () => {
           </div>
           <div className='col-md-4 offset-1'>
               <div className='animation'>
-              <h1 className="typing">M  </h1>
+              <h1 className="typing">M </h1>
               </div>
           </div>
           </div>

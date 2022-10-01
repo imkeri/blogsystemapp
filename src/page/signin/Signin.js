@@ -6,8 +6,6 @@ import { baseurl } from '../../baseurl'
 import Cookies from 'js-cookie'
 
 const Signin = () => {
-
-   
     
     const [data, setData] =useState([{
         email: "",
@@ -27,6 +25,7 @@ const Signin = () => {
             if(token==='' || token === undefined){
                 Cookies.set('email', res.data.email)
                 Cookies.set('jwt', res.data.token)
+                Cookies.set('id',res.data._id)
             }
             
             window.location="/"

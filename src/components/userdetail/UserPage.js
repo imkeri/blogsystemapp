@@ -1,18 +1,24 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import Blogs from '../homecom/Blogs'
-import Tranding from '../homecom/Tranding'
+// import Blogs from '../homecom/Blogs'
+// import Tranding from '../homecom/Tranding'
 import Sidebar from './Sidebar'
 import { baseurl } from '../../baseurl'
 import './userpage.css'
+import Cookies from 'js-cookie'
+import Userblog from './Userblog'
 const UserPage = () => {
      const [data, setData] = useState([])
+     const id = Cookies.get('id')
+     console.log("id....",id)
      const getallblog = () => {
           try {
-               axios.get(`${baseurl}/blog/allBlog`)
+               axios.get(`${baseurl}/blog/blogByUserId/${id}`)
                     .then((res) => {
                          console.log("response...", res.data.data);
                          setData(res.data.data);
+                    }).catch((err)=>{
+                         console.log("error",err)
                     })
           } catch (error) {
                console.log("error", error)
@@ -45,15 +51,14 @@ const UserPage = () => {
                                    {
                                         data.map((val,key)=>{
                                         return <>
-                                        <Blogs
+                                        <Userblog
                                            key = {key}
                                            id={val._id}
                                            Auth_name={val.Auth_name} 
                                            category={val.category}
                                            title={val.title}
                                            description={val.description}
-
-                                        />
+                                           />
                                          <hr></hr>
                                         </>
                                         })

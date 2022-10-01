@@ -9,12 +9,12 @@ import BlogByAuthName from './BlogByAuthName';
 const MainAuth = () => {
     const [auth, setAuth] = useState([]);
     const params = useParams();
-    const Auth_name = params.name
-    console.log('authnameeee', Auth_name);
+    const id = params.id
+    console.log('authnameeee', id);
 
     const getByAuthname = () => {
         try {
-            axios.get(`${baseurl}/blog/blogByAuthName/${Auth_name}`).
+            axios.get(`${baseurl}/blog/blogByUserId/${id}`).
                 then((res) => {
                     console.log("ressss...s.s.", res.data.data);
                     setAuth(res.data.data);

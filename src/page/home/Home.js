@@ -7,10 +7,13 @@ import Blogs from '../../components/homecom/Blogs';
 import Fixedcon from '../../components/homecom/Fixedcon';
 import axios from 'axios';
 import { baseurl } from '../../baseurl';
+
 const Home = () => {
 
      const [data,setDate] = useState([]);
      const [tranding, setTranding] = useState([]);
+   
+    
      // view all blog
 
        const getallblog = () =>{
@@ -37,14 +40,17 @@ const Home = () => {
 
           }
      }
+ 
+      
        useEffect(()=>{
           getFiveBlog();
           getallblog();
+         
        },[])
 
   return (
     <div>
-      <Header />
+      <Header  />
       <div className='container pt-5'>
          <div className='tranding_media'>
          <span><ShowChartIcon className='tranding_icon'/> </span> <span className='tranding_text'> Tranding on Medium</span>

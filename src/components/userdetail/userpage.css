@@ -30,6 +30,9 @@
     font-size: 30px;
     color: grey;
 }
+.all_icon a:active{
+    color: black;
+}
 .user_icon{
     height: 25vh;
     display: flex;

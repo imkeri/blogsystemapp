@@ -3,21 +3,28 @@ import React, { useEffect, useState } from 'react'
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { useParams ,Link} from 'react-router-dom'
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import MessageIcon from '@mui/icons-material/Message';
 import { baseurl } from '../../baseurl'
 import './blogbyid.css'
+import Cookies from 'js-cookie';
 const Blogbyid = () => {
+  const stat = localStorage.getItem('setfollowStatus')
+  console.log("stat",stat)
     const [data,setData] = useState([]);
     const [like,setLike] = useState(1);
     const [val,setval] = useState(true)
     const [like_num,setLike_num] = useState()
+    const [status,setStatus] =useState(stat)
+    const userid = Cookies.get('id')
     const params = useParams()
     const id = params.id
+    
 console.log(id)
      const getbyid =()=>{
        try {
         axios.get(`${baseurl}/blog/viewblogById/${id}`)
         .then((res)=>{
-            console.log("........",res.data.data)
+            console.log("........blogbyid",res.data.data)
             setData(res.data.data)
         })
        } catch (error) {
@@ -29,7 +36,6 @@ console.log(id)
      },[])
 
     //  end viewbyid
-
     const likeblog=(e)=>{
       try {
        console.log("hello")
@@ -47,6 +53,29 @@ console.log(id)
       }
     
     }
+    // sendRequest
+    const sendRequest =()=>{
+      try {
+        axios.put(`${baseurl}/follow/addfollow/${userid}/${id}`)
+        .then((res)=>{
+            console.log("........follow",res.data.data)
+            const setval = res.data.data
+            console.log(setval.followStatus)
+            localStorage.setItem('setfollowStatus',setval.followStatus)
+            const  status = localStorage.getItem('setfollowStatus')
+            setStatus(status)
+            
+        }).catch((err)=>{
+          console.log("..err",err.message)
+          alert("")
+        })
+       } catch (error) {
+         console.log("error",error)
+       }
+    }
+
+
+      
 
   return (
     <div className='blog_detail container-fluid'>
@@ -84,7 +113,13 @@ console.log(id)
              </div>
               <div className='d-flex auth_detail'>
               <img src='/image/2.jpg' alt='p1'></img>
-              <Link to={`/authdetail/${data.Auth_name}`}>{data.Auth_name}</Link>
+              <Link to={`/authdetail/${data.UserId}`}>{data.Auth_name}</Link>
+              <Link to={`/authdetail/${data.UserId}`}><h5>5 Followers</h5></Link>
+              <p>img elements must have an alt prop, either with meaningful text, or an empty string for decorative images </p>
+              <div className='d-flex btns'>
+              <button className="follow" onClick={(e)=>sendRequest(e)}>{status ? "Following" : "Follow"}</button>
+              <Link to={`/authdetail/${data.UserId}`} className="icon"><MessageIcon/></Link>
+              </div>
               </div>
              </div>
         </div>

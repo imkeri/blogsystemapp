@@ -57,8 +57,6 @@ const Blogs = (props) => {
          
         <img src='/image/2.jpg' alt='p2'></img>
 
-
-           
         </div>
       </div>
     

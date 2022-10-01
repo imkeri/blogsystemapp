@@ -49,6 +49,7 @@
    margin-left: 5px;
    padding: 5px 10px;
    border-radius: 15px;
+   overflow: hidden;
 }
 .blog_save_icon{
   

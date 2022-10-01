@@ -4,7 +4,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import AddIcon from '@mui/icons-material/Add';
 import HomeIcon from '@mui/icons-material/Home';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 const Sidebar = () => {
   return (
       <div className='sidebar'>
@@ -12,9 +12,9 @@ const Sidebar = () => {
            <FiberSmartRecordIcon className='licon'/>
          </div>
          <div className='all_icon'>
-           <Link to=""><HomeIcon className='aicon' /></Link>
-           <Link to=""><NotificationsIcon className='aicon'/></Link>
-           <Link to="/write"><AddIcon className='aicon'/></Link>
+           <NavLink to="/user"><HomeIcon className='aicon' /></NavLink>
+           <NavLink to="/:name"><NotificationsIcon className='aicon'/></NavLink>
+           <NavLink to="/write"><AddIcon className='aicon'/></NavLink>
          </div>
          <div className='user_icon'>
             <Link to="/userprofile"><AccountCircleIcon className='uicon'/></Link>

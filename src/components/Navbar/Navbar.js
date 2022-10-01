@@ -21,6 +21,7 @@ const Navbar = () => {
           console.log("res.....",res)
           Cookies.remove('jwt')
           Cookies.remove('email')
+          Cookies.remove('id')
           window.location= "/signin"
         }).catch((er)=>{
           console.log("error",er)
@@ -44,8 +45,6 @@ const Navbar = () => {
             token ? <li><NavLink to=" "onClick={(e) => logout(e)}>sign out</NavLink></li>:
               <li><NavLink to="/signin">sign in</NavLink></li>
           }
-
-
           <button className='btn1'><Link to="/ragistration">Get started</Link></button>
 
         </ul>
